@@ -1,0 +1,223 @@
+it
+db.devicedatas.find()
+du.devicedatas.find()
+db.devicedatas.countDocuments()
+db.devicedatas.count()
+db.devicedatas.find()
+use genxiot
+db.devicedatas.find()
+db.devivedatas.find()
+use genxiot
+db.devicedatas.find()
+db.devicemasters.find()
+use genxiot
+)
+]
+}
+  }
+    "$date": "2022-10-18T10:23:49.699Z"
+  "updatedAt": {
+  },
+    "$date": "2022-10-18T10:23:49.699Z"
+  "createdAt": {
+  },
+    "timestamp": 1666088629
+    "D5_R": "N",
+    "D5": 1,
+    "D4_R": "N",
+    "D4": 1,
+    "D3_R": "N",
+    "D3": 1,
+    "D2_R": "N",
+    "D2": 1,
+    "D1_R": "N",
+    "D1": 1,
+    "D0_R": "N",
+    "D0": 0,
+    "MkWh_R": "N",
+    "MkWh": 56,
+    "FREQ_R": "N",
+    "FREQ": 50.75357232449484,
+    "PF3": 0.3677172286271757,
+    "PF2": 1.9339418493137694,
+    "PF_R": "N",
+    "PF1": 0.11969074262511503,
+    "I3_R": "N",
+    "I3": 94,
+    "I2_R": "N",
+    "I2": 64,
+    "I1_R": "N",
+    "I1": 37,
+    "V3_R": "N",
+    "V3": 240,
+    "V2_R": "N",
+    "V2": 215,
+    "V1_R": "N",
+    "V1": 194,
+    "DID": "8876859487",
+    "SK": "RRRST778",
+  "payload": {
+  "topic": "askdevicedata/8876859487",
+  "clientcode": "SBF0001",
+  "device_Id": "8876859487",
+{
+},
+  }
+    "$date": "2022-10-18T10:23:49.449Z"
+  "updatedAt": {
+  },
+    "$date": "2022-10-18T10:23:49.449Z"
+  "createdAt": {
+  },
+    "timestamp": 1666088629
+    "D5_R": "N",
+    "D5": 1,
+    "D4_R": "N",
+    "D4": 0,
+    "D3_R": "N",
+    "D3": 0,
+    "D2_R": "N",
+    "D2": 0,
+    "D1_R": "N",
+    "D1": 1,
+    "D0_R": "N",
+    "D0": 0,
+    "MkWh_R": "N",
+    "MkWh": 241,
+    "FREQ_R": "N",
+    "FREQ": 49.12585358987971,
+    "PF3": 1.71363983046394,
+    "PF2": 0.4757746175856945,
+    "PF_R": "N",
+    "PF1": 1.019628726257272,
+    "I3_R": "N",
+    "I3": 88,
+    "I2_R": "N",
+    "I2": 52,
+    "I1_R": "N",
+    "I1": 44,
+    "V3_R": "N",
+    "V3": 187,
+    "V2_R": "N",
+    "V2": 208,
+    "V1_R": "N",
+    "V1": 206,
+    "DID": "8876859487",
+    "SK": "RRRST778",
+  "payload": {
+  "topic": "askdevicedata/8876859487",
+  "clientcode": "SBF0001",
+  "device_Id": "8876859487",
+{
+db.devicedatas.insertMany([
+show collections()
+db.devicedatas.drop()
+db.devicedatas.find()
+use genxiot
+switch genxiot
+db.devicedatas.find()
+db.devicedatas.insertMany([ { "device_Id": "8876859487", "clientcode": "SBF0001", "topic": "askdevicedata/8876859487", "payload": { "SK": "RRRST778", "DID": "8876859487", "V1": 206, "V1_R": "N", "V2": 208, "V2_R": "N", "V3": 187, "V3_R": "N", "I1": 44, "I1_R": "N", "I2": 52, "I2_R": "N", "I3": 88, "I3_R": "N", "PF1": 1.019628726257272, "PF_R": "N", "PF2": 0.4757746175856945, "PF3": 1.71363983046394, "FREQ": 49.12585358987971, "FREQ_R": "N", "MkWh": 241, "MkWh_R": "N", "D0": 0, "D0_R": "N", "D1": 1, "D1_R": "N", "D2": 0, "D2_R": "N", "D3": 0, "D3_R": "N", "D4": 0, "D4_R": "N", "D5": 1, "D5_R": "N", "timestamp": 1666088629 }, "createdAt": { "$date": "2022-10-18T10:23:49.449Z" }, "updatedAt": { "$date": "2022-10-18T10:23:49.449Z" } }, { "device_Id": "8876859487", "clientcode": "SBF0001", "topic": "askdevicedata/8876859487", "payload": { "SK": "RRRST778", "DID": "8876859487", "V1": 194, "V1_R": "N", "V2": 215, "V2_R": "N", "V3": 240, "V3_R": "N", "I1": 37, "I1_R": "N", "I2": 64, "I2_R": "N", "I3": 94, "I3_R": "N", "PF1": 0.11969074262511503, "PF_R": "N", "PF2": 1.9339418493137694, "PF3": 0.3677172286271757, "FREQ": 50.75357232449484, "FREQ_R": "N", "MkWh": 56, "MkWh_R": "N", "D0": 0, "D0_R": "N", "D1": 1, "D1_R": "N", "D2": 1, "D2_R": "N", "D3": 1, "D3_R": "N", "D4": 1, "D4_R": "N", "D5": 1, "D5_R": "N", "timestamp": 1666088629 }, "createdAt": { "$date": "2022-10-18T10:23:49.699Z" }, "updatedAt": { "$date": "2022-10-18T10:23:49.699Z" } }])
+use genxiot
+db.devices.insertMany([ { "device_Id": "8876859487", "clientcode": "SBF0001", "name": "Test Device 1", "location": "Ambarnath", "dataFrequency": 15, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2023-04-07T10:47:05.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 235, "alert_on_high": true, "high_alert_value": 240, "low": 190, "alarm_on_low": true, "low_alarm_value": 200, "alert_on_low": true, "low_alert_value": 195 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }], "__v": 0 }, { "device_Id": "8876859488", "clientcode": "SBF0001", "name": "Test Device 2", "location": "Badlapur", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }], "__v": 0 }, { "device_Id": "8876859489", "clientcode": "SBF0001", "name": "Test Device 3", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }], "__v": 0 }, { "device_Id": "8876859490", "clientcode": "SBF0002", "name": "Test Device 4", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:27:02.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }], "__v": 0 }, { "device_Id": "8876859491", "clientcode": "SBF0001", "name": "Test Device 5", "location": "Thane", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:44:21.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }], "__v": 0 }])
+}
+db.devices.insertMany([ { "device_Id": "8876859487", "clientcode": "SBF0001", "name": "Test Device 1", "location": "Ambarnath", "dataFrequency": 15, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2023-04-07T10:47:05.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 235, "alert_on_high": true, "high_alert_value": 240, "low": 190, "alarm_on_low": true, "low_alarm_value": 200, "alert_on_low": true, "low_alert_value": 195 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859488", "clientcode": "SBF0001", "name": "Test Device 2", "location": "Badlapur", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, { "device_Id": "8876859489", "clientcode": "SBF0001", "name": "Test Device 3", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859490", "clientcode": "SBF0002", "name": "Test Device 4", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:27:02.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859491", "clientcode": "SBF0001", "name": "Test Device 5", "location": "Thane", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:44:21.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false  }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false  } ] } ], "__v": 0
+}
+  "__v": 0
+  ],
+db.devices.insertMany([ { "device_Id": "8876859487", "clientcode": "SBF0001", "name": "Test Device 1", "location": "Ambarnath", "dataFrequency": 15, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2023-04-07T10:47:05.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 235, "alert_on_high": true, "high_alert_value": 240, "low": 190, "alarm_on_low": true, "low_alarm_value": 200, "alert_on_low": true, "low_alert_value": 195 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859488", "clientcode": "SBF0001", "name": "Test Device 2", "location": "Badlapur", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, { "device_Id": "8876859489", "clientcode": "SBF0001", "name": "Test Device 3", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859490", "clientcode": "SBF0002", "name": "Test Device 4", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:27:02.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859491", "clientcode": "SBF0001", "name": "Test Device 5", "location": "Thane", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:44:21.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false  }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false  } }
+])
+}
+  "__v": 0
+  ],
+db.devices.insertMany([ { "device_Id": "8876859487", "clientcode": "SBF0001", "name": "Test Device 1", "location": "Ambarnath", "dataFrequency": 15, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2023-04-07T10:47:05.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 235, "alert_on_high": true, "high_alert_value": 240, "low": 190, "alarm_on_low": true, "low_alarm_value": 200, "alert_on_low": true, "low_alert_value": 195 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859488", "clientcode": "SBF0001", "name": "Test Device 2", "location": "Badlapur", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, { "device_Id": "8876859489", "clientcode": "SBF0001", "name": "Test Device 3", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859490", "clientcode": "SBF0002", "name": "Test Device 4", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:27:02.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185 } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false } ], "__v": 0 }, {  "device_Id": "8876859491", "clientcode": "SBF0001", "name": "Test Device 5", "location": "Thane", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:44:21.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, } ], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false,  }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false,  } }
+db.devices.insertMany([ { "_id": { "$oid": "630068712017d01c5b2b6b36" }, "device_Id": "8876859487", "clientcode": "SBF0001", "name": "Test Device 1", "location": "Ambarnath", "dataFrequency": 15, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2023-04-07T10:47:05.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 235, "alert_on_high": true, "high_alert_value": 240, "low": 190, "alarm_on_low": true, "low_alarm_value": 200, "alert_on_low": true, "low_alert_value": 195, "_id": { "$oid": "630068712017d01c5b2b6b37" } }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068712017d01c5b2b6b38" } }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068712017d01c5b2b6b39" } }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068712017d01c5b2b6b3a" } }], "__v": 0 }, { "_id": { "$oid": "630068972017d01c5b2b6b3c" }, "device_Id": "8876859488", "clientcode": "SBF0001", "name": "Test Device 2", "location": "Badlapur", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068972017d01c5b2b6b3d" } }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068972017d01c5b2b6b3e" } }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068972017d01c5b2b6b3f" } }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068972017d01c5b2b6b40" } }], "__v": 0 }, { "_id": { "$oid": "630068a52017d01c5b2b6b42" }, "device_Id": "8876859489", "clientcode": "SBF0001", "name": "Test Device 3", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-11T23:28:56.782Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068a52017d01c5b2b6b43" } }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068a52017d01c5b2b6b44" } }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068a52017d01c5b2b6b45" } }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068a52017d01c5b2b6b46" } }], "__v": 0 }, { "_id": { "$oid": "630068b32017d01c5b2b6b48" }, "device_Id": "8876859490", "clientcode": "SBF0002", "name": "Test Device 4", "location": "Kalyan", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:27:02.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068b32017d01c5b2b6b49" } }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068b32017d01c5b2b6b4a" } }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068b32017d01c5b2b6b4b" } }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068b32017d01c5b2b6b4c" } }], "__v": 0 }, { "_id": { "$oid": "630068c52017d01c5b2b6b4e" }, "device_Id": "8876859491", "clientcode": "SBF0001", "name": "Test Device 5", "location": "Thane", "dataFrequency": 10, "added": { "$date": "2014-01-01T23:28:56.782Z" }, "lastUpdated": { "$date": "2022-08-21T06:44:21.000Z" }, "isActive": true, "alarms_active": true, "alerts_active": true, "analog_params": [ { "an_name": "V1", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068c52017d01c5b2b6b4f" } }, { "an_name": "V2", "set_value": 230, "alarm_on_high": true, "high_alarm_value": 310, "alert_on_high": true, "high_alert_value": 290, "low": 190, "alarm_on_low": true, "low_alarm_value": 165, "alert_on_low": true, "low_alert_value": 185, "_id": { "$oid": "630068c52017d01c5b2b6b50" } }], "digital_params": [ { "di_name": "D1", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068c52017d01c5b2b6b51" } }, { "di_name": "D2", "set_value": false, "alert_on_high": true, "alarm_on_high": false, "alert_on_low": false, "alarm_on_low": false, "_id": { "$oid": "630068c52017d01c5b2b6b52" } }], "__v": 0 }])
+db.devices.find()
+show collections
+db.devicemasters.insertMany([ { "name": "Bldg 2 B", "device_type_id": "62d82a1f227fb33f99a0f250", "clientCode": "SB005HG", "locationCode": "62c26a9d5b17c276a35b6f46", "appCode": "1", "fetchFrequency": 5, "isActive": true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }, { "name": "Bldg 3 B", "device_type_id": "62d82a1f227fb33f99a0f250", "clientCode": "SB005HG", "locationCode": "62c26a9d5b17c276a35b6f46", "appCode": "1", "fetchFrequency": 5, "isActive": true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }])
+db.devicemasters.insertMany([ { "_id": { "$oid": "62d8ef40194a0cac7c9b1498" }, "name": "Bldg 2 B", "device_type_id": "62d82a1f227fb33f99a0f250", "clientCode": "SB005HG", "locationCode": "62c26a9d5b17c276a35b6f46", "appCode": "1", "fetchFrequency": 5, "isActive": true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }, { "_id": { "$oid": "62d8ef40194a0cac7c9b1499" }, "name": "Bldg 3 B", "device_type_id": "62d82a1f227fb33f99a0f250", "clientCode": "SB005HG", "locationCode": "62c26a9d5b17c276a35b6f46", "appCode": "1", "fetchFrequency": 5, "isActive": true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }])
+db.devicemasters.insertMany([ { "_id": { "$oid": "62d8ef40194a0cac7c9b1498" }, "name": "Bldg 2 B", "device_type_id": "62d82a1f227fb33f99a0f250", "clientCode": "SB005HG", "locationCode": "62c26a9d5b17c276a35b6f46", "appCode": "1", "fetchFrequency": 5, "isActive": true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }),
+db.createCollection("devicemasters")
+    "$date": "2022-06-22T11:16:55.615Z"
+  "updatedOn": {
+  },
+    "$date": "2022-06-22T11:16:55.615Z"
+  "createdOn": {
+  "createdBy": "nilesh3",
+  "alertOn": true,
+  "alarmOn": true,
+  "isActive": true,
+  "fetchFrequency": 5,
+  "appCode": "1",
+  "locationCode": "62c26a9d5b17c276a35b6f46",
+  "clientCode": "SB005HG",
+  "device_type_id": "62d82a1f227fb33f99a0f250",
+  "name": "Bldg 2 B",
+  },
+    "$oid": "62d8ef40194a0cac7c9b1498"
+  "_id": {
+db.createCollection(devicemasters,{)
+db.createCollection(devicemasters,{})
+show collections
+db.createCollection(devicemasters)
+use genxiot
+switch genxiot
+exit
+db.system.users.find()
+show collections
+use admin
+db.devicedatas.find()
+db.devices.find()
+show collections
+use genxiot
+show dbs true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }])
+db.devicemasters.insertMany([ { "_id": { "$oid": "62d8ef40194a0cac7c9b1498" }, "name": "Bldg 2 B", "device_type_id": "62d82a1f227fb33f99a0f250", "clientCode": "SB005HG", "locationCode": "62c26a9d5b17c276a35b6f46", "appCode": "1", "fetchFrequency": 5, "isActive": true, "alarmOn": true, "alertOn": true, "createdBy": "nilesh3", "createdOn": { "$date": "2022-06-22T11:16:55.615Z" }, "updatedOn": { "$date": "2022-06-22T11:16:55.615Z" }, "__v": 0 }),
+db.createCollection("devicemasters")
+    "$date": "2022-06-22T11:16:55.615Z"
+  "updatedOn": {
+  },
+    "$date": "2022-06-22T11:16:55.615Z"
+  "createdOn": {
+  "createdBy": "nilesh3",
+  "alertOn": true,
+  "alarmOn": true,
+  "isActive": true,
+  "fetchFrequency": 5,
+  "appCode": "1",
+  "locationCode": "62c26a9d5b17c276a35b6f46",
+  "clientCode": "SB005HG",
+  "device_type_id": "62d82a1f227fb33f99a0f250",
+  "name": "Bldg 2 B",
+  },
+    "$oid": "62d8ef40194a0cac7c9b1498"
+  "_id": {
+db.createCollection(devicemasters,{)
+db.createCollection(devicemasters,{})
+show collections
+db.createCollection(devicemasters)
+use genxiot
+switch genxiot
+exit
+db.system.users.find()
+show collections
+use admin
+db.devicedatas.find()
+db.devices.find()
+show collections
+use genxiot
+show dbsa0cac7c9b1498"
+  "_id": {
+db.createCollection(devicemasters,{)
+db.createCollection(devicemasters,{})
+show collections
+db.createCollection(devicemasters)
+use genxiot
+switch genxiot
+exit
+db.system.users.find()
+show collections
+use admin
+db.devicedatas.find()
+db.devices.find()
+show collections
+use genxiot
+show dbs
