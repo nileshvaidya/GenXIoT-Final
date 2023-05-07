@@ -26,9 +26,7 @@ const SocketContextComponent: React.FunctionComponent<ISocketContextComponentPro
   const [device_Id, setDevice_Id] = useState("");
 
   const socket = useSocket("http://localhost:8080", {
-    reconnectionAttempts: 5,
-    reconnectionDelay: 5000,
-    autoConnect: false
+    transports:['websockets','polling','flashsocket'],
   });
 
   useEffect(() => {

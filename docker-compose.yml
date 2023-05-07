@@ -1,7 +1,7 @@
 version: "3"
 services:
    mongo:
-      container_name: mongo-mern-docker-boilerplate
+      container_name: mongo-mern-docker-genxiot
       image: mongo
       restart: always
       ports:
@@ -17,7 +17,7 @@ services:
          - MONGO_INITDB_PASSWORD=Password123
 
    backend:
-      container_name: node-mern-docker-boilerplate
+      container_name: node-mern-docker-genxiot
       build:
          context: ./server
          dockerfile: docker-setup/node/development/Dockerfile
@@ -39,7 +39,7 @@ services:
          - "8080:8080"
 
    frontend:
-      container_name: react-mern-docker-boilerplate
+      container_name: react-mern-docker-genxiot
       build:
          context: ./client
          dockerfile: docker-setup/react/development/Dockerfile
@@ -59,7 +59,7 @@ services:
 
 
    mosquitto:
-      container_name: mqtt
+      container_name: mosquitto
       image: eclipse-mosquitto
       restart: always
       volumes:
@@ -73,6 +73,6 @@ services:
 
 networks:
   default:
-    name: backend-network-mern-docker-boilerplate
+    name: backend-network-mern-docker-genxiot
   frontend:
-    name: frontend-network-mern-docker-boilerplate
+    name: frontend-network-mern-docker-genxiot

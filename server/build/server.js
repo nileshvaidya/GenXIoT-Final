@@ -39,25 +39,40 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv").config({
+    path: "./.env.".concat(process.env.NODE_ENV),
+    // path: './.env.development.local',
+});
 var express_1 = __importDefault(require("express"));
 var http_1 = __importDefault(require("http"));
 var mongoose_1 = __importDefault(require("mongoose"));
 var config_1 = require("./config");
 var config_2 = __importDefault(require("config"));
 var socket_1 = require("./socket");
+// import { Server } from 'socket.io';
 var mqttclient_1 = __importDefault(require("./mqttclient"));
 var Logging_1 = __importDefault(require("./library/Logging"));
 var Device_1 = __importDefault(require("./routes/Device"));
 var DeviceData_1 = __importDefault(require("./routes/DeviceData"));
 var body_parser_1 = __importDefault(require("body-parser"));
 var connectToDB = require('./db/db');
-var cors = require('cors');
+var cors_1 = __importDefault(require("cors"));
 var port = process.env.SERVER_PORT;
 // const port = config.server.port;
 var host = config_1.config.server.host;
 var mongo_url = 'mongodb://127.0.0.1:27017/genxiot';
 //const mongo_url = 'mongodb://0.0.0.0:27017/genxiot';//?authSource=admin';// config.mongo.url //+ "/"+ config.mongo.db_name;
 var corsOrigin = config_2.default.get('corsOrigin');
+var whitelist = ['http://localhost:3000'];
+// const corsOptions = {
+//   origin: (origin: string, callback: (arg0: Error | null, arg1: boolean | undefined) => void) => {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error(),false)
+//     }
+//   }
+// }
 var router = (0, express_1.default)();
 router.set('view engine', 'ejs');
 router.use(body_parser_1.default.urlencoded({ extended: false }));
@@ -74,12 +89,13 @@ var connectDB = function () { return __awaiter(void 0, void 0, void 0, function 
         switch (_a.label) {
             case 0:
                 console.log('connecting to mongodb...');
-                DB_HOST = process.env.DB_HOST;
-                DB_PORT = process.env.DB_PORT;
-                DB_NAME = process.env.DB_NAME;
-                DB_USER = process.env.DB_USER;
-                DB_PASSWORD = process.env.DB_PASSWORD;
+                DB_HOST = process.env.DB_HOST || 'mongo';
+                DB_PORT = process.env.DB_PORT || 27017;
+                DB_NAME = process.env.DB_NAME || 'genxiot';
+                DB_USER = process.env.DB_USER || 'local_user';
+                DB_PASSWORD = process.env.DB_PASSWORD || 'Password123';
                 DB_URL = "mongodb://".concat(DB_USER, ":").concat(DB_PASSWORD, "@").concat(DB_HOST, ":").concat(DB_PORT, "/").concat(DB_NAME);
+                console.log(DB_URL);
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
@@ -122,19 +138,23 @@ var StartServer = function () {
     router.use(express_1.default.json());
     /** Rules of our API */
     router.use(function (req, res, next) {
+        res.header("Access-Control-Allow-Credentials", 'true');
         res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-        if (req.method == 'OPTIONS') {
-            res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-            return res.status(200).json({});
-        }
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET, UPDATE, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
         next();
     });
     /** Routes */
-    router.use('/devices', cors(), Device_1.default);
-    router.use('/devicedata', cors(), DeviceData_1.default);
+    router.use((0, cors_1.default)({
+        allowedHeaders: "*",
+        methods: "*",
+        origin: "*",
+        maxAge: 60,
+    }));
+    router.use('/api/devices', Device_1.default);
+    router.use('/api/devicedata', DeviceData_1.default);
     /** Healthcheck */
-    router.get('/ping', cors(), function (req, res, next) { return res.status(200).json({ message: 'pong' }); });
+    router.get('/api/ping', function (req, res, next) { return res.status(200).json({ message: 'pong' }); });
     /** Error handling */
     router.use(function (req, res, next) {
         Logging_1.default.warning("URL : ".concat(req.url));

@@ -7,15 +7,15 @@ FROM node:16-slim as frontend
 WORKDIR /frontend
 
 # Install app dependencies
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
-RUN yarn install
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
 ENV NODE_ENV=production
 
-RUN yarn build
+RUN npm run build
 
 EXPOSE 3000
 

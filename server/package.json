@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node build/server.js",
         "dev": "nodemon src/server.ts",
-        "prod": "cross-env NODE_ENV=production node build/server.js",
+        "start-prod": "NODE_ENV=production pm2 start build/server.js",
         "build": "tsc -b"
     },
     "author": "",
@@ -19,6 +19,7 @@
         "@types/morgan": "^1.9.3",
         "@types/node": "^18.0.6",
         "@types/pino": "^7.0.5",
+        "@types/socket.io": "^3.0.2",
         "@types/uuid": "^8.3.4",
         "nodemon": "^2.0.7",
         "pino": "^8.2.0",
@@ -28,13 +29,15 @@
         "typescript": "^4.7.4"
     },
     "dependencies": {
+        "@types/node-telegram-bot-api": "^0.61.6",
         "body-parser": "^1.20.0",
         "chalk": "^4.1.2",
         "config": "^3.3.7",
+        "cors": "^2.8.5",
         "date-fns": "^2.29.3",
         "dayjs": "^1.11.3",
         "dotenv": "^16.0.1",
-        "ejs": "^2.6.2",
+        "ejs": "^3.1.9",
         "express": "^4.18.1",
         "http-errors": "^2.0.0",
         "joi": "^17.6.0",
@@ -44,10 +47,9 @@
         "morgan": "^1.10.0",
         "mqtt": "^4.3.7",
         "nanoid": "^4.0.0",
-        "socket.io": "^4.5.1",
-        "uuid": "^8.3.2",
-        "@types/node-telegram-bot-api": "^0.61.6",
-        "node-telegram-bot-api": "^0.61.0"
+        "node-telegram-bot-api": "^0.61.0",
+        "socket.io": "^4.6.1",
+        "uuid": "^8.3.2"
     },
     "prittier": {
         "tabwidth": 4

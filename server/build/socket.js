@@ -130,14 +130,19 @@ var ServerSocket = /** @class */ (function () {
         ServerSocket.clients = {};
         ServerSocket.devices = {};
         ServerSocket.io = new socket_io_1.Server(server, {
-            serveClient: false,
-            pingInterval: 10000,
-            pingTimeout: 5000,
-            cookie: false,
             cors: {
-                origin: 'https://www.genxiot.com',
-                methods: ['GET', 'POST']
+                origin: 'http:localhost:3000',
+                methods: ['GET', 'POST'],
+                allowedHeaders: ['Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'],
+                exposedHeaders: ['Access-Control-Allow-Origin', '*'],
+                credentials: true
             }
+        });
+        ServerSocket.io.engine.on("initial_headers", function (headers, req) {
+            headers["Access-Control-Allow-Origin"] = "https://genxiot.com";
+        });
+        ServerSocket.io.engine.on("headers", function (headers, req) {
+            headers["Access-Control-Allow-Origin"] = "https://genxiot.com"; // url to all
         });
         ServerSocket.io.on('connect', this.StartListeners);
         console.info('Socket IO started');

@@ -104,6 +104,10 @@ var processIncomingData = function (topic, message) { return __awaiter(void 0, v
                 return [4 /*yield*/, (0, DevicesDB_1.getClientCodeFromDeviceId)(device_id)];
             case 1:
                 clientCode = _a.sent();
+                /** UnComment when Data from Device needs to be saved. Commented for development */
+                if (!clientCode) {
+                    clientCode = "SBF0001";
+                }
                 tsData = extractTimeStamp(message);
                 // console.log("device_id : ", device_id, "tsData :", tsData);
                 (0, DevicesDB_1.updateTimeStamp)(device_id, tsData);

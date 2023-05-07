@@ -10,7 +10,7 @@ import mongoose from 'mongoose';
 import { config, DB } from './config';
 import configuration from 'config';
 import { ServerSocket } from './socket';
-import { Server } from 'socket.io';
+// import { Server } from 'socket.io';
 import mqttclient from './mqttclient';
 import Logging from './library/Logging';
 import deviceRoutes from './routes/Device';
@@ -18,7 +18,7 @@ import deviceDataRoutes from './routes/DeviceData';
 import bodyParser from 'body-parser';
 import { log } from 'console';
 const connectToDB = require('./db/db');
-var cors = require('cors');
+import cors from 'cors';
 
 const port = process.env.SERVER_PORT;
 // const port = config.server.port;
@@ -27,7 +27,21 @@ const mongo_url = 'mongodb://127.0.0.1:27017/genxiot'
 //const mongo_url = 'mongodb://0.0.0.0:27017/genxiot';//?authSource=admin';// config.mongo.url //+ "/"+ config.mongo.db_name;
 const corsOrigin = configuration.get<string>('corsOrigin');
 
+const whitelist = ['http://localhost:3000']
+// const corsOptions = {
+//   origin: (origin: string, callback: (arg0: Error | null, arg1: boolean | undefined) => void) => {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error(),false)
+//     }
+//   }
+// }
+
+
+
 const router = express();
+
 
 router.set('view engine', 'ejs');
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -42,11 +56,11 @@ let dbConnected
 // Connect to MongoDB
 const  connectDB = async () => {
     console.log('connecting to mongodb...');
-    const DB_HOST = process.env.DB_HOST;
-    const DB_PORT = process.env.DB_PORT;
-    const DB_NAME = process.env.DB_NAME;
-    const DB_USER = process.env.DB_USER;
-    const DB_PASSWORD = process.env.DB_PASSWORD;
+    const DB_HOST = process.env.DB_HOST||'mongo';
+    const DB_PORT = process.env.DB_PORT||27017;
+    const DB_NAME = process.env.DB_NAME||'genxiot';
+    const DB_USER = process.env.DB_USER||'local_user';
+    const DB_PASSWORD = process.env.DB_PASSWORD||'Password123';
     
     const DB_URL = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
     console.log(DB_URL);
@@ -89,23 +103,30 @@ const StartServer = () => {
     router.use(express.json());
 
     /** Rules of our API */
-    router.use((req, res, next) => {
+    router.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Credentials", 'true');
         res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-
-        if (req.method == 'OPTIONS') {
-            res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-            return res.status(200).json({});
-        }
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET, UPDATE, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
 
         next();
     });
     /** Routes */
-    router.use('/api/devices', cors(), deviceRoutes);
-    router.use('/api/devicedata', cors(), deviceDataRoutes);
+
+
+    router.use(
+        cors({
+            allowedHeaders: "*",
+            methods: "*",
+            origin: "*",
+            maxAge: 60 ,
+        })
+    );
+    router.use('/api/devices',  deviceRoutes);
+    router.use('/api/devicedata',  deviceDataRoutes);
 
     /** Healthcheck */
-    router.get('/api/ping',cors(), (req, res, next) => res.status(200).json({ message: 'pong' }));
+    router.get('/api/ping', (req, res, next) => res.status(200).json({ message: 'pong' }));
 
     /** Error handling */
     router.use((req, res, next) => {

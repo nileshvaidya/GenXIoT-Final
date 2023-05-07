@@ -1,3 +1,24 @@
+db.devicedatas.find()
+db.devicemasters.find()
+show collections
+db.devicesmasters.find()
+db.devices.find()
+use genxiot
+db.system.users.find()
+show collections
+db.collections.show()
+db.users.find()
+use admin
+show dbs
+db.devicemasters.find()
+show collections
+db.devicedatas.find()
+db.devices.find()
+show collections
+use genxiot
+show dbs
+show db
+db.show()
 it
 db.devicedatas.find()
 du.devicedatas.find()

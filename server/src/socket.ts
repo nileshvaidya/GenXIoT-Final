@@ -2,8 +2,7 @@ import Logger from './utils/logging';
 import { info } from 'console';
 import { Server as HTTPServer } from 'http';
 import { object } from 'joi';
-import { Socket, Server } from 'socket.io';
-import { callbackify } from 'util';
+import { Socket, Server } from 'socket.io'
 import { v4 } from 'uuid';
 
 let val = JSON.stringify({
@@ -64,22 +63,29 @@ export class ServerSocket {
         ServerSocket.clients = {};
         ServerSocket.devices = {};
         ServerSocket.io = new Server(server, {
-            serveClient: false,
-            pingInterval: 10000,
-            pingTimeout: 5000,
-            cookie: false,
             cors: {
-                origin: 'http://localhost:3000',
+                origin: 'http:localhost:3000',//'https://genxiot.com',
                 methods: ['GET', 'POST'],
-                allowedHeaders: ['my-custom-header'],
+                allowedHeaders: ['Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'],
+                exposedHeaders: ['Access-Control-Allow-Origin' , '*'],
                 credentials: true
             }
-        });
+    });
+
+        ServerSocket.io.engine.on("initial_headers", (headers, req) => {
+            headers["Access-Control-Allow-Origin"] = "https://genxiot.com";
+          });
+          
+          ServerSocket.io.engine.on("headers", (headers, req) => {
+            headers["Access-Control-Allow-Origin"] = "https://genxiot.com"; // url to all
+          });
 
         ServerSocket.io.on('connect', this.StartListeners);
 
         console.info('Socket IO started');
     }
+
+
 
     StartListeners = (socket: Socket) => {
         // console.info('Message received from ' + socket.id);
@@ -136,12 +142,12 @@ export class ServerSocket {
             }
         });
 
-        socket.on('add_client', (cid) => {
+        socket.on('add_client', (cid: string) => {
             console.log('Client to be added : ' + cid);
             this.AddToClientList(cid, socket.id);
         });
 
-        socket.on('add_device', (did) => {
+        socket.on('add_device', (did: string) => {
             console.log('Device to be added : ' + did);
             this.AddToDeviceList(did, socket.id);
         });
@@ -232,4 +238,6 @@ export class ServerSocket {
         // console.info('Emmitting Events: ' + name + ' to ', users);
         users.forEach((id) => (payload ? this.io.to(id).emit(name, payload) : this.io.to(id).emit(name)));
     };
+
+
 }

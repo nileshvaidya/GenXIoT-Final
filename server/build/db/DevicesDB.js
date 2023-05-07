@@ -48,6 +48,7 @@ var DeviceData_1 = __importDefault(require("../models/DeviceData"));
 // import AnalogParameterDetails from "../models/AnalogParameterDetails";
 // import DigitalParameterDetails from "../models/DigitalParameterDetails";
 var logger_1 = __importDefault(require("../utils/logger"));
+var moment_1 = __importDefault(require("moment"));
 var Logging_1 = __importDefault(require("../library/Logging"));
 // Function 1 : Get Devices Master Data [input param : clientCode ] [output param : devices[]]
 var getDevices = function (client_Code) { return __awaiter(void 0, void 0, void 0, function () {
@@ -122,15 +123,15 @@ var saveDeviceData = function (device_Id, clientcode, topic, payload) { return _
     var deviceData;
     return __generator(this, function (_a) {
         try {
-            deviceData = new DeviceData_1.default({ device_Id: "".concat(device_Id), clientcode: "".concat(clientcode), topic: "".concat(topic), payload: payload });
-            // Logging.info('Device_Id : ' + device_Id);
+            deviceData = new DeviceData_1.default({ device_Id: "".concat(device_Id), clientcode: "".concat(clientcode), topic: "".concat(topic), payload: JSON.parse(payload) });
+            Logging_1.default.info('Device_Id : ' + device_Id);
             deviceData._id instanceof mongoose_1.default.Schema.Types.ObjectId;
             deviceData.save(function (err, deviceData) {
                 if (err) {
                     Logging_1.default.error('Error occurred while saving devicedata : ' + err);
                     return;
                 }
-                // logger.info("Device Data : " + deviceData + " -  Saved at : " + moment.now());
+                logger_1.default.info("Device Data : " + deviceData + " -  Saved at : " + moment_1.default.now());
             });
         }
         catch (error) {
@@ -142,14 +143,14 @@ var saveDeviceData = function (device_Id, clientcode, topic, payload) { return _
 exports.saveDeviceData = saveDeviceData;
 var updateTimeStamp = function (device_Id, timestamp) {
     var filterQuery = { device_Id: { $eq: device_Id } };
-    // Logging.info('Device To Update : ' + device_Id);
-    // Logging.info('lastUpdated : ' + timestamp);
+    Logging_1.default.info('Device To Update : ' + device_Id);
+    Logging_1.default.info('lastUpdated : ' + timestamp);
     Device_1.default.updateOne(filterQuery, { lastUpdated: timestamp }, function (err, docs) {
         if (err) {
             Logging_1.default.error(err);
         }
         else {
-            // Logging.info('TimeStamp Updated : ' + JSON.stringify(docs));
+            Logging_1.default.info('TimeStamp Updated : ' + JSON.stringify(docs));
         }
     });
 };
