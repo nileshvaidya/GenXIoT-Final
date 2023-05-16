@@ -40,7 +40,8 @@ COPY --from=frontend /frontend/build .
 
 # Update the nginx config with our own config file
 COPY --from=frontend /frontend/docker-setup/nginx/mern-template.conf /etc/nginx/conf.d/
-
+# RUN mkdir /etc/nginx/certs
+# COPY --from=frontend /frontend/docker-setup/nginx/live /etc/nginx/certs/
 EXPOSE 80
 
 RUN useradd -ms /bin/bash nonroot

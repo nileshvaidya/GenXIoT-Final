@@ -51,11 +51,6 @@ var clients = [
         chatId: 408339003,
     },
     {
-        name: 'Aditya',
-        phone: '+1111111111',
-        chatId: 6268255389,
-    },
-    {
         name: 'Sandip',
         phone: '+9987585914',
         chatId: 375871884,
@@ -64,26 +59,6 @@ var clients = [
         name: 'Nikhil',
         phone: '+919833012272',
         chatId: 394709538,
-    },
-    {
-        name: 'Lalit',
-        phone: '+917719972982',
-        chatId: 5883171510,
-    },
-    {
-        name: 'Mayur',
-        phone: '+9192847383932',
-        chatId: 6110618946,
-    },
-    {
-        name: 'Bhushan',
-        phone: '+917767935893',
-        chatId: 6093051997,
-    },
-    {
-        name: 'Rajesh',
-        phone: '+919823517437',
-        chatId: 6007491589,
     }
 ];
 var sendTelegramMsg = function (sendTo, paramType, param, msgType, val, type, limit) {
@@ -91,10 +66,10 @@ var sendTelegramMsg = function (sendTo, paramType, param, msgType, val, type, li
     if (msgType == 'alerts') {
         if (paramType == 'analog') {
             if (type == 'high') {
-                msg = "\uD83D\uDCA3 *ALERTS* \uD83D\uDCA3 --- Param ".concat(param, " 's Value : ").concat(val, " has crossed the *set Higher Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDD25 \uD83D\uDD25 \uD83D\uDD25");
+                msg = "\uD83D\uDCA3 *ALERTS* \uD83D\uDCA3 --- Param ".concat(param, " 's Value : ").concat(val, " is above the Higher Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDD25 \uD83D\uDD25 \uD83D\uDD25");
             }
             if (type == 'low') {
-                msg = "\uD83D\uDCA3 *ALERTS* \uD83D\uDCA3 --- Param ".concat(param, " 's Value : ").concat(val, " has crossed the *set Higher Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDD25 \uD83D\uDD25 \uD83D\uDD25");
+                msg = "\uD83D\uDCA3 *ALERTS* \uD83D\uDCA3 --- Param ".concat(param, " 's Value : ").concat(val, " is below the Lower Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDD25 \uD83D\uDD25 \uD83D\uDD25");
             }
         }
         if (paramType == 'digital') {
@@ -109,10 +84,10 @@ var sendTelegramMsg = function (sendTo, paramType, param, msgType, val, type, li
     if (msgType == 'alarms') {
         if (paramType == 'analog') {
             if (type == 'high') {
-                msg = "\u23F0 *ALARM* \u23F0 --- Param ".concat(param, " 's Value : ").concat(val, " has crossed the *set Higher Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDE80 \uD83D\uDE80 \uD83D\uDE80");
+                msg = "\u23F0 *ALARM* \u23F0 --- Param ".concat(param, " 's Value : ").concat(val, " is above the Higher Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDE80 \uD83D\uDE80 \uD83D\uDE80");
             }
             if (type == 'low') {
-                msg = "\u23F0 *ALARM* \u23F0 --- Param ".concat(param, " 's Value : ").concat(val, " has crossed the *set Higher Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDE80 \uD83D\uDE80 \uD83D\uDE80");
+                msg = "\u23F0 *ALARM* \u23F0 --- Param ".concat(param, " 's Value : ").concat(val, " is below the Lower Limit of ").concat(limit, ". Kindly take appropriate action immediately.* \uD83D\uDE80 \uD83D\uDE80 \uD83D\uDE80");
             }
         }
         if (paramType == 'digital') {

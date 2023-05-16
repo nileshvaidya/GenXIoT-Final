@@ -6,7 +6,7 @@ import Logging from "../../util/Logging";
 import { IDeviceData } from "../../models/DeviceData";
 import { DeviceDateContextType } from './types';
 import ContextDevTool from 'react-context-devtool';
-
+import { SOCKET_URL } from '../../config/default';
 export  const DeviceDataContext = createContext<DeviceDateContextType |null>(null)
 
 interface Props {
@@ -14,7 +14,9 @@ interface Props {
 }
 
 const DeviceDataProvider:FC<Props> = ({children}) => {
-  const host = "http://localhost:8080";
+  // const host = "http://localhost:8080";
+  // const host = "http://genxiot.com";
+  const host = SOCKET_URL;
   const deviceDataInitial = [];
   const actualDataInitial = {};
   const [deviceData, setDeviceData] = useState(deviceDataInitial);

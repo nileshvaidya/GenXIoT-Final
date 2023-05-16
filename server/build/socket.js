@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServerSocket = void 0;
 var socket_io_1 = require("socket.io");
 var uuid_1 = require("uuid");
+require("dotenv").config({
+    path: "./.env.".concat(process.env.NODE_ENV),
+    // path: './.env.development.local',
+});
 var val = JSON.stringify({
     SK: 'RRRST778',
     DID: '8876859487',
@@ -43,6 +47,7 @@ var val = JSON.stringify({
 var ServerSocket = /** @class */ (function () {
     function ServerSocket(server) {
         var _this = this;
+        var _b;
         this.StartListeners = function (socket) {
             // console.info('Message received from ' + socket.id);
             socket.on('handshake', function (callback) {
@@ -131,18 +136,26 @@ var ServerSocket = /** @class */ (function () {
         ServerSocket.devices = {};
         ServerSocket.io = new socket_io_1.Server(server, {
             cors: {
-                origin: 'http:localhost:3000',
+                origin: ['http://localhost:3000', 'https://genxiot.com', 'http://genxiot.com', 'https://www.genxiot.com', 'http://www.genxiot.com'],
+                //origin: 'http://localhost:3000',
+                // origin: 'http://www.genxiot.com',
                 methods: ['GET', 'POST'],
                 allowedHeaders: ['Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'],
                 exposedHeaders: ['Access-Control-Allow-Origin', '*'],
                 credentials: true
             }
         });
+        var ORIGIN = (_b = process.env.ORIGIN_URL) !== null && _b !== void 0 ? _b : "";
+        console.log("ORIGIN : ", ORIGIN);
         ServerSocket.io.engine.on("initial_headers", function (headers, req) {
-            headers["Access-Control-Allow-Origin"] = "https://genxiot.com";
+            // headers["Access-Control-Allow-Origin"] = "http://www.genxiot.com";
+            //headers["Access-Control-Allow-Origin"] = "http://localhost:3000";
+            headers["Access-Control-Allow-Origin"] = ORIGIN;
         });
         ServerSocket.io.engine.on("headers", function (headers, req) {
-            headers["Access-Control-Allow-Origin"] = "https://genxiot.com"; // url to all
+            //   headers["Access-Control-Allow-Origin"] = "http://www.genxiot.com"; // url to all
+            //headers["Access-Control-Allow-Origin"] = "http://localhost:3000"; // url to all
+            headers["Access-Control-Allow-Origin"] = ORIGIN;
         });
         ServerSocket.io.on('connect', this.StartListeners);
         console.info('Socket IO started');

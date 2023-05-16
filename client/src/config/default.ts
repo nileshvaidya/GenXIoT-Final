@@ -1,1 +1,1 @@
-export const SOCKET_URL = process.env.SOCKET_URL || "ws://localhost:8080";
+export const SOCKET_URL = process.env.SOCKET_URL || "https://www.genxiot.com";

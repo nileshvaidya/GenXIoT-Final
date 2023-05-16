@@ -1,78 +1,91 @@
 version: "3"
 services:
-   mongo:
-      container_name: mongo-mern-docker-genxiot
-      image: mongo
-      restart: always
-      ports:
-         - "27017:27018"
-      networks:
-         - default
-      volumes:
-         - ./server/docker-setup/mongo/db-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-         - ./server/docker-setup/mongo/mongo-volume:/data/db
-      environment:
-         - MONGO_INITDB_DATABASE=genxiot
-         - MONGO_INITDB_USER=local_user
-         - MONGO_INITDB_PASSWORD=Password123
+  mongo:
+    container_name: mongo-mern-docker-genxiot-on
+    image: mongo
+    restart: always
+    ports:
+      - "27017"
+    networks:
+      - default
+    volumes:
+      - ./backend/docker-setup/mongo/db-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./backend/docker-setup/mongo/mongo-volume:/data/db
+      
+    environment:
+      - MONGO_INITDB_DATABASE=genxiot
+      - MONGO_INITDB_USER=local_user
+      - MONGO_INITDB_PASSWORD=Password123
 
-   backend:
-      container_name: node-mern-docker-genxiot
-      build:
-         context: ./server
-         dockerfile: docker-setup/node/development/Dockerfile
-      networks:
-         - default
-         - frontend
-      volumes:
-         - ./server:/home/node/app
-      environment:
-         - NODE_ENV=development
-      env_file:
-         - ./server/.env.development
-      tty: true
-      stdin_open: true
-      depends_on:
-         - mongo
-         - mosquitto
-      ports:
-         - "8080:8080"
+  backend:
+    container_name: node-mern-docker-genxiot-on
+    build:
+      context: ./server
+      dockerfile: docker-setup/node/production/Dockerfile
+    networks:
+      - default
+      - frontend
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - ./server/.env.production
+    tty: true
+    stdin_open: true
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
 
-   frontend:
-      container_name: react-mern-docker-genxiot
-      build:
-         context: ./client
-         dockerfile: docker-setup/react/development/Dockerfile
-      networks:
-         - frontend
-      environment:
-         - NODE_ENV=development
-      volumes:
-         - ./client:/frontend
-      depends_on:
-         - backend
-      tty: true
-      stdin_open: true
-      ports:
-         - "3000:3000"
+  frontend:
+    container_name: react-mern-docker-genxiot-on
+    build:
+      context: ./client
+      dockerfile: docker-setup/react/production/Dockerfile
+    volumes:
+    - ./frontend/docker-setup/nginx/live/genxiot.com/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+    - ./frontend/docker-setup/nginx/live/genxiot.com/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+    - ./frontend/docker-setup/nginx/live/genxiot.com/chain.pem:/etc/nginx/certs/chain.pem:ro
+    networks:
+      - frontend
+    environment:
+      - NODE_ENV=production
+      - HTTPS=true
+      - SSL_CERTIFICATE_PATH=./client/docker-setup/nginx/live/genxiot.com/cert.pem
+      - SSL_CERTIFICATE_KEY_PATH=./client/docker-setup/nginx/live/genxiot.com/privkey.pem
+      - SSL_CERTIFICATE_CHAIN_PATH=./client/docker-setup/nginx/live/genxiot.com/chain.pem
+    depends_on:
+      - backend
+    tty: true
+    stdin_open: true
+    ports:
+      - "80:80"
+      - "443:443"
 
+  mosquitto:
+    container_name: mqtt
+    image: eclipse-mosquitto
+    restart: always
+    volumes:
+      - ./config:/mosquitto/config
+      - ./config:/mosquitto/data
+      - ./config:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
 
+  # devicedata:
+  #   container_name: devicedata-container
+  #   build:
+  #     context: ./device_data
+  #     dockerfile: docker-setup/node/development/Dockerfile
+  #   tty: true
+  #   stdin_open: true
+  #   depends_on:
+  #     - mosquitto
 
-   mosquitto:
-      container_name: mosquitto
-      image: eclipse-mosquitto
-      restart: always
-      volumes:
-         - ./mosquitto/config:/mosquitto/config
-         - ./mosquitto/config:/mosquitto/data
-         - ./mosquitto/config:/mosquitto/log
-      ports:
-         - 1883:1883
-         - 9001:9001
-    
 
 networks:
   default:
-    name: backend-network-mern-docker-genxiot
+    name: backend-network-mern-docker-genxiot-on
   frontend:
-    name: frontend-network-mern-docker-genxiot
+    name: frontend-network-mern-docker-genxiot-on

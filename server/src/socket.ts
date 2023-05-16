@@ -5,6 +5,11 @@ import { object } from 'joi';
 import { Socket, Server } from 'socket.io'
 import { v4 } from 'uuid';
 
+require("dotenv").config({
+    path: `./.env.${process.env.NODE_ENV}`,
+    // path: './.env.development.local',
+  });
+
 let val = JSON.stringify({
     SK: 'RRRST778',
     DID: '8876859487',
@@ -64,20 +69,28 @@ export class ServerSocket {
         ServerSocket.devices = {};
         ServerSocket.io = new Server(server, {
             cors: {
-                origin: 'http:localhost:3000',//'https://genxiot.com',
+                origin: ['http://localhost:3000','https://genxiot.com','http://genxiot.com','https://www.genxiot.com','http://www.genxiot.com'],
+                //origin: 'http://localhost:3000',
+                // origin: 'http://www.genxiot.com',
                 methods: ['GET', 'POST'],
                 allowedHeaders: ['Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'],
                 exposedHeaders: ['Access-Control-Allow-Origin' , '*'],
                 credentials: true
             }
     });
+    const ORIGIN:string = process.env.ORIGIN_URL ?? "";
+        console.log("ORIGIN : ", ORIGIN);
 
-        ServerSocket.io.engine.on("initial_headers", (headers, req) => {
-            headers["Access-Control-Allow-Origin"] = "https://genxiot.com";
+        ServerSocket.io.engine.on("initial_headers", (headers: { [x: string]: string; }, req: any) => {
+            // headers["Access-Control-Allow-Origin"] = "http://www.genxiot.com";
+            //headers["Access-Control-Allow-Origin"] = "http://localhost:3000";
+            headers["Access-Control-Allow-Origin"] = ORIGIN;
           });
           
-          ServerSocket.io.engine.on("headers", (headers, req) => {
-            headers["Access-Control-Allow-Origin"] = "https://genxiot.com"; // url to all
+          ServerSocket.io.engine.on("headers", (headers: { [x: string]: string; }, req: any) => {
+            //   headers["Access-Control-Allow-Origin"] = "http://www.genxiot.com"; // url to all
+              //headers["Access-Control-Allow-Origin"] = "http://localhost:3000"; // url to all
+              headers["Access-Control-Allow-Origin"] = ORIGIN;
           });
 
         ServerSocket.io.on('connect', this.StartListeners);

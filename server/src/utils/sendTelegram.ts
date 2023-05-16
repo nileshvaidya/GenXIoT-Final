@@ -17,12 +17,6 @@ const clients: Client[] = [
     chatId: 408339003,
   },
   {
-    name: 'Aditya',
-    phone: '+1111111111',
-    chatId: 6268255389,
-
-  },
-  {
     name: 'Sandip',
     phone: '+9987585914',
     chatId: 375871884,
@@ -31,26 +25,6 @@ const clients: Client[] = [
     name: 'Nikhil',
     phone: '+919833012272',
     chatId: 394709538,
-  },
-  {
-    name: 'Lalit',
-    phone: '+917719972982',
-    chatId: 5883171510,
-  },
-  {
-    name: 'Mayur',
-    phone: '+9192847383932',
-    chatId: 6110618946,
-  },
-  {
-    name: 'Bhushan',
-    phone: '+917767935893',
-    chatId: 6093051997,
-  },
-  {
-    name: 'Rajesh',
-    phone: '+919823517437',
-    chatId: 6007491589,
   }
 ];
 
@@ -63,11 +37,11 @@ export const sendTelegramMsg: any = (sendTo: string,paramType: string, param:str
   if (msgType == 'alerts') {
     if (paramType == 'analog') {
       if (type == 'high') {
-        msg = `💣 *ALERTS* 💣 --- Param ${param} 's Value : ${val} has crossed the *set Higher Limit of ${limit}. Kindly take appropriate action immediately.* 🔥 🔥 🔥`;
+        msg = `💣 *ALERTS* 💣 --- Param ${param} 's Value : ${val} is above the Higher Limit of ${limit}. Kindly take appropriate action immediately.* 🔥 🔥 🔥`;
 
       }
       if (type == 'low') {
-        msg = `💣 *ALERTS* 💣 --- Param ${param} 's Value : ${val} has crossed the *set Higher Limit of ${limit}. Kindly take appropriate action immediately.* 🔥 🔥 🔥`;
+        msg = `💣 *ALERTS* 💣 --- Param ${param} 's Value : ${val} is below the Lower Limit of ${limit}. Kindly take appropriate action immediately.* 🔥 🔥 🔥`;
 
       }
     }
@@ -87,11 +61,11 @@ export const sendTelegramMsg: any = (sendTo: string,paramType: string, param:str
   if (msgType == 'alarms') {
     if (paramType == 'analog') {
       if (type == 'high') {
-        msg = `⏰ *ALARM* ⏰ --- Param ${param} 's Value : ${val} has crossed the *set Higher Limit of ${limit}. Kindly take appropriate action immediately.* 🚀 🚀 🚀`;
+        msg = `⏰ *ALARM* ⏰ --- Param ${param} 's Value : ${val} is above the Higher Limit of ${limit}. Kindly take appropriate action immediately.* 🚀 🚀 🚀`;
 
       }
       if (type == 'low') {
-        msg = `⏰ *ALARM* ⏰ --- Param ${param} 's Value : ${val} has crossed the *set Higher Limit of ${limit}. Kindly take appropriate action immediately.* 🚀 🚀 🚀`;
+        msg = `⏰ *ALARM* ⏰ --- Param ${param} 's Value : ${val} is below the Lower Limit of ${limit}. Kindly take appropriate action immediately.* 🚀 🚀 🚀`;
 
       }
     }

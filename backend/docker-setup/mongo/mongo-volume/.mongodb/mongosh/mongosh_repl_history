@@ -1,3 +1,15 @@
+exit
+db.devices.drop()
+use genxiot
+exit
+db.devices.drop()
+use genxiot
+exit
+db.devices.drop()
+use genxiot
+db.devicedatas.find()
+show collections
+use genxiot
 );
    }
        ]

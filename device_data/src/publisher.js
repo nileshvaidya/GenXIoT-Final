@@ -5,8 +5,9 @@ require('dotenv').config()
 
 
 const clientId = 'mqttjs_' + Math.random().toString(8).substr(2, 4) 
-const host = 'localhost';
-const port = '1883';
+// const host = 'localhost';
+const host = '128.199.19.252';
+const port = 1883;
 const connectUrl = `mqtt://${host}:${port}`
 console.log (connectUrl);
 const client  = mqtt.connect(connectUrl, {
@@ -31,7 +32,7 @@ client.on("connect",function(connack){
 // on client connection publish messages to the topic on the server/broker  
   //let payload = {1: "Hello world", 2: "Welcome to the test connection",3: "No of times " + Math.random()} 
   
-  let myVar = setInterval(function(){ sendData() }, 10000);
+  let myVar = setInterval(function(){ sendData() }, 300000);
 
   function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

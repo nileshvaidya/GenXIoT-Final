@@ -176,7 +176,7 @@ var CheckAnalogParams = function (device, deviceData) { return __awaiter(void 0,
                         }
                         if (an_param_array_1[i].low_alert_value) {
                             if (parseInt(val_1) < an_param_array_1[i].low_alert_value.valueOf()) {
-                                myEmitter.emit('alarms', "Param ".concat(an_param_array_1[i].an_name.toString(), " Value : ").concat(val_1, " is lower than High Alert Value which is ").concat(an_param_array_1[i].low_alert_value.valueOf(), " "), 'alerts.txt');
+                                myEmitter.emit('alerts', "Param ".concat(an_param_array_1[i].an_name.toString(), " Value : ").concat(val_1, " is lower than Low Alert Value which is ").concat(an_param_array_1[i].low_alert_value.valueOf(), " "), 'alerts.txt');
                                 logging_1.default.warn('ProcessHelper', 'Check Alarm', "Alert Received...");
                                 (0, sendTelegram_1.sendTelegramMsg)(clientMobile, 'analog', an_param_array_1[i].an_name.toString(), 'alerts', val_1, 'low', an_param_array_1[i].low_alert_value.valueOf());
                                 return;
@@ -186,7 +186,7 @@ var CheckAnalogParams = function (device, deviceData) { return __awaiter(void 0,
                         }
                         if (an_param_array_1[i].low_alarm_value) {
                             if (parseInt(val_1) < an_param_array_1[i].low_alarm_value.valueOf()) {
-                                myEmitter.emit('alarms', "Param ".concat(an_param_array_1[i].an_name.toString(), " Value : ").concat(val_1, " is lower than High Alert Value which is ").concat(an_param_array_1[i].low_alarm_value.valueOf(), " "), 'alarms.txt');
+                                myEmitter.emit('alarms', "Param ".concat(an_param_array_1[i].an_name.toString(), " Value : ").concat(val_1, " is lower than Low Alarm Value which is ").concat(an_param_array_1[i].low_alarm_value.valueOf(), " "), 'alarms.txt');
                                 logging_1.default.warn('ProcessHelper', 'Check Alarm', "Alarm Received...");
                                 (0, sendTelegram_1.sendTelegramMsg)(clientMobile, 'analog', an_param_array_1[i].an_name.toString(), 'alarms', val_1, 'low', an_param_array_1[i].low_alarm_value.valueOf());
                                 return;

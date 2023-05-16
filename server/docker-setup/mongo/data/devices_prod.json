@@ -1,0 +1,269 @@
+[{
+	"_id": {
+		"$oid": "630068712017d01c5b2b6b36"
+	},
+	"device_Id": "8876859487",
+	"clientcode": "SBF0001",
+	"name": "Test Device 1",
+	"location": "Ambarnath",
+	"dataFrequency": 15,
+	"added": {
+		"$date": {
+			"$numberLong": "1388618936782"
+		}
+	},
+	"lastUpdated": {
+		"$date": {
+			"$numberLong": "1663332663000"
+		}
+	},
+	"isActive": true,
+	"alarms_active": true,
+	"alerts_active": true,
+	"analog_params": [{
+			"an_name": "V1",
+			"set_value": 230,
+			"alarm_on_high": true,
+			"high_alarm_value": 310,
+			"alert_on_high": true,
+			"high_alert_value": 290,
+			"low": 190,
+			"alarm_on_low": true,
+			"low_alarm_value": 165,
+			"alert_on_low": true,
+			"low_alert_value": 185,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b37"
+			}
+		},
+		{
+			"an_name": "V2",
+			"set_value": 230,
+			"alarm_on_high": false,
+			"high_alarm_value": 310,
+			"alert_on_high": false,
+			"high_alert_value": 290,
+			"low": 190,
+			"alarm_on_low": false,
+			"low_alarm_value": 165,
+			"alert_on_low": false,
+			"low_alert_value": 185,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b38"
+			}
+		},
+		{
+			"an_name": "V3",
+			"set_value": 230,
+			"alarm_on_high": false,
+			"high_alarm_value": 310,
+			"alert_on_high": false,
+			"high_alert_value": 290,
+			"low": 190,
+			"alarm_on_low": false,
+			"low_alarm_value": 165,
+			"alert_on_low": false,
+			"low_alert_value": 185,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b39"
+			}
+		},
+		{
+			"an_name": "I1",
+			"set_value": 50,
+			"alarm_on_high": false,
+			"high_alarm_value": 70,
+			"alert_on_high": false,
+			"high_alert_value": 90,
+			"low": 5,
+			"alarm_on_low": false,
+			"low_alarm_value": 3,
+			"alert_on_low": false,
+			"low_alert_value": 1,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b40"
+			}
+		},
+		{
+			"an_name": "I2",
+			"set_value": 50,
+			"alarm_on_high": false,
+			"high_alarm_value": 70,
+			"alert_on_high": false,
+			"high_alert_value": 90,
+			"low": 5,
+			"alarm_on_low": false,
+			"low_alarm_value": 3,
+			"alert_on_low": false,
+			"low_alert_value": 1,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b41"
+			}
+		},
+		{
+			"an_name": "I3",
+			"set_value": 50,
+			"alarm_on_high": false,
+			"high_alarm_value": 70,
+			"alert_on_high": false,
+			"high_alert_value": 90,
+			"low": 5,
+			"alarm_on_low": false,
+			"low_alarm_value": 3,
+			"alert_on_low": false,
+			"low_alert_value": 1,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b42"
+			}
+		},
+		{
+			"an_name": "PF1",
+			"set_value": 99,
+			"alarm_on_high": false,
+			"high_alarm_value": 110,
+			"alert_on_high": false,
+			"high_alert_value": 120,
+			"low": 95,
+			"alarm_on_low": false,
+			"low_alarm_value": 94,
+			"alert_on_low": false,
+			"low_alert_value": 90,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b43"
+			}
+		},
+		{
+			"an_name": "PF2",
+			"set_value": 99,
+			"alarm_on_high": false,
+			"high_alarm_value": 110,
+			"alert_on_high": false,
+			"high_alert_value": 120,
+			"low": 95,
+			"alarm_on_low": false,
+			"low_alarm_value": 94,
+			"alert_on_low": false,
+			"low_alert_value": 90,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b44"
+			}
+		},
+		{
+			"an_name": "PF3",
+			"set_value": 99,
+			"alarm_on_high": false,
+			"high_alarm_value": 110,
+			"alert_on_high": false,
+			"high_alert_value": 120,
+			"low": 95,
+			"alarm_on_low": false,
+			"low_alarm_value": 94,
+			"alert_on_low": false,
+			"low_alert_value": 90,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b45"
+			}
+		},
+		{
+			"an_name": "FREQ",
+			"set_value": 50,
+			"alarm_on_high": false,
+			"high_alarm_value": 55,
+			"alert_on_high": false,
+			"high_alert_value": 58,
+			"low": 45,
+			"alarm_on_low": false,
+			"low_alarm_value": 44,
+			"alert_on_low": false,
+			"low_alert_value": 42,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b46"
+			}
+		},
+		{
+			"an_name": "MKWh",
+			"set_value": 300,
+			"alarm_on_high": false,
+			"high_alarm_value": 360,
+			"alert_on_high": false,
+			"high_alert_value": 390,
+			"low": 190,
+			"alarm_on_low": false,
+			"low_alarm_value": 165,
+			"alert_on_low": false,
+			"low_alert_value": 185,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b47"
+			}
+		}
+
+	],
+	"digital_params": [{
+			"di_name": "Left Tilt",
+			"set_value": false,
+			"alert_on_high": true,
+			"alarm_on_high": false,
+			"alert_on_low": false,
+			"alarm_on_low": false,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b39"
+			}
+		},
+		{
+			"di_name": "Left Overshoot",
+			"set_value": false,
+			"alert_on_high": true,
+			"alarm_on_high": false,
+			"alert_on_low": false,
+			"alarm_on_low": false,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b3a"
+			}
+		},
+		{
+			"di_name": "Left Overload",
+			"set_value": false,
+			"alert_on_high": true,
+			"alarm_on_high": false,
+			"alert_on_low": false,
+			"alarm_on_low": false,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b3a"
+			}
+		},
+		{
+			"di_name": "Right Tilt",
+			"set_value": false,
+			"alert_on_high": true,
+			"alarm_on_high": false,
+			"alert_on_low": false,
+			"alarm_on_low": false,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b3a"
+			}
+		},
+		{
+			"di_name": "Right Overshoot",
+			"set_value": false,
+			"alert_on_high": false,
+			"alarm_on_high": false,
+			"alert_on_low": false,
+			"alarm_on_low": false,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b3a"
+			}
+		},
+		{
+			"di_name": "Right Overload",
+			"set_value": false,
+			"alert_on_high": false,
+			"alarm_on_high": false,
+			"alert_on_low": false,
+			"alarm_on_low": false,
+			"_id": {
+				"$oid": "630068712017d01c5b2b6b3a"
+			}
+		}
+	],
+	"__v": 0
+}]

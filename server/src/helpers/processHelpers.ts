@@ -128,7 +128,7 @@ const CheckAnalogParams = async (device: IDevice, deviceData: IDeviceData) => {
                     }
                     if (an_param_array[i].low_alert_value) {
                         if (parseInt(val) < an_param_array[i].low_alert_value.valueOf()) {
-                            myEmitter.emit('alarms', `Param ${an_param_array[i].an_name.toString()} Value : ${val} is lower than High Alert Value which is ${an_param_array[i].low_alert_value.valueOf()} `, 'alerts.txt');
+                            myEmitter.emit('alerts', `Param ${an_param_array[i].an_name.toString()} Value : ${val} is lower than Low Alert Value which is ${an_param_array[i].low_alert_value.valueOf()} `, 'alerts.txt');
                             Logger.warn('ProcessHelper', 'Check Alarm', "Alert Received...");
                             sendTelegramMsg(clientMobile, 'analog', an_param_array[i].an_name.toString(), 'alerts', val, 'low', an_param_array[i].low_alert_value.valueOf());
                             return;
@@ -138,7 +138,7 @@ const CheckAnalogParams = async (device: IDevice, deviceData: IDeviceData) => {
                     }
                     if (an_param_array[i].low_alarm_value) {
                         if (parseInt(val) < an_param_array[i].low_alarm_value.valueOf()) {
-                            myEmitter.emit('alarms', `Param ${an_param_array[i].an_name.toString()} Value : ${val} is lower than High Alert Value which is ${an_param_array[i].low_alarm_value.valueOf()} `, 'alarms.txt');
+                            myEmitter.emit('alarms', `Param ${an_param_array[i].an_name.toString()} Value : ${val} is lower than Low Alarm Value which is ${an_param_array[i].low_alarm_value.valueOf()} `, 'alarms.txt');
                             Logger.warn('ProcessHelper', 'Check Alarm', "Alarm Received...");
                             sendTelegramMsg(clientMobile, 'analog', an_param_array[i].an_name.toString(), 'alarms', val, 'low', an_param_array[i].low_alarm_value.valueOf());
                             return;

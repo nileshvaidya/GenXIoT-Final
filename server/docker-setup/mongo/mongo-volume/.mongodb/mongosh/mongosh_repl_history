@@ -1,3 +1,7 @@
+db.devicedatas.count()
+it
+db.devicedatas.find()
+use genxiot
 db.devicedatas.find()
 db.devicemasters.find()
 show collections

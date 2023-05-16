@@ -1,7 +1,7 @@
 import { IDeviceData } from './../../models/DeviceData';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import Logging from '../../util/Logging';
-
+import { SOCKET_URL } from '../../config/default';
 interface historicalDeviceDataVariables{
   device_Id: string;
   minutes: Number;
@@ -10,7 +10,9 @@ interface historicalDeviceDataVariables{
 export const deviceApi = createApi({
   reducerPath: 'deviceApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:8080/',
+    // baseUrl: 'http://localhost:8080/',
+    // baseUrl: 'http://genxiot.com/',
+    baseUrl: SOCKET_URL,
   }),
   endpoints: (builder) => ({
     getDevicesByClientId: builder.query({

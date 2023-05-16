@@ -15,12 +15,13 @@ var EVENTS = {
 };
 function mqttclient() {
     var port = config_1.default.get('mqttport');
-    var host = 'http://128.199.19.252'; //config.get<string>('mqtthost');
+    var host = 'mosquitto'; //config.get<string>('mqtthost');
     var username = 'ask'; // config.get<string>('mqttUsername');
     var password = 'info'; //config.get<string>('mqttPassword');
     var clientId = 'mqttjs_' + Math.random().toString(8).substr(2, 4);
     var clientCode = 'SBF0001';
-    var connectUrl = 'mqtt://mosquitto:1883'; //`mqtt://${host}:${port}`;
+    // const connectUrl = 'mqtt://mosquitto:1883'; //`mqtt://${host}:${port}`;
+    var connectUrl = "mqtt://".concat(host, ":").concat(port);
     logger_1.default.info("URL : " + connectUrl + " Username : " + username + " Pass : " + password);
     var client = mqtt.connect(connectUrl, {
         clientId: clientId,
@@ -55,7 +56,7 @@ function mqttclient() {
             (0, DevicesDB_1.saveDeviceData)(v[1], clientCode, topic, message);
             (0, processHelpers_1.processIncomingData)(topic, message).then(function (cc) {
                 //logger.info(cc);
-                //sendData(cc!, message);
+                // sendData(cc!, message);
                 Logging_1.default.info('Device Data received!!!');
             });
         }

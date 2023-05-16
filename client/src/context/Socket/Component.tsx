@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useEffect, useReducer, useState } from 'react
 import { useSocket } from '../../hooks/useSocket';
 import { defaultSocketContextState, SocketStateContextProvider } from './ContextState_original';
 import { SocketDispatchContextProvider, SocketReducer } from './ContextDispatch';
-
+import { SOCKET_URL } from "../../config/default";
 const client_Id = 'SBF0001';
 
 export interface ISocketContextComponentProps extends PropsWithChildren{
@@ -25,7 +25,12 @@ const SocketContextComponent: React.FunctionComponent<ISocketContextComponentPro
   const [loading, setLoading] = useState(true);
   const [device_Id, setDevice_Id] = useState("");
 
-  const socket = useSocket("http://localhost:8080", {
+
+  // const socket = useSocket("http://www.genxiot.com", {
+  //   transports:['websockets','polling','flashsocket'],
+  // });
+
+  const socket = useSocket(SOCKET_URL, {
     transports:['websockets','polling','flashsocket'],
   });
 
@@ -98,9 +103,9 @@ const SocketContextComponent: React.FunctionComponent<ISocketContextComponentPro
   };
   
   const AddToClient = (clientId:string) => {
-    console.log('Request to add Client to Client List...');
+    console.log('Request to add Client to Client List...', clientId);
 
-    socket.emit('add_client', client_Id, (res: string) => {
+    socket.emit('add_client', clientId, (res: string) => {
       console.log(res);
     });
   }
