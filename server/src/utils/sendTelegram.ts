@@ -11,16 +11,16 @@ interface Client {
   chatId: number;
 }
 const clients: Client[] = [
-  {
-    name: 'Nilesh',
-    phone: '+91887575913',
-    chatId: 408339003,
-  },
-  {
-    name: 'Sandip',
-    phone: '+9987585914',
-    chatId: 375871884,
-  },
+  // {
+  //   name: 'Nilesh',
+  //   phone: '+91887575913',
+  //   chatId: 408339003,
+  // },
+  // {
+  //   name: 'Sandip',
+  //   phone: '+9987585914',
+  //   chatId: 375871884,
+  // },
   {
     name: 'Nikhil',
     phone: '+919833012272',
